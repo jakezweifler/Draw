@@ -1,10 +1,13 @@
 let canvasSize = document.querySelector('.art').clientHeight;
+let canvasWidth = document.querySelector('.art').clientWidth;
 
 const sketch = function( p ) {
   p.setup = function() {
-    const drawFunctions = [drawEllipse, drawLine, drawRectangle, drawTriangle];
+    // const drawFunctions = [drawEllipse, drawLine, drawRectangle, drawTriangle];
+
+    drawFunctions = [drawTriangle];
     const roughSize = 200;
-    p.createCanvas(canvasSize, canvasSize); 
+    p.createCanvas(canvasWidth, canvasSize); 
     p.background('#62c9c4');
     for (let i = 0; i < 5; i++) {
       drawFunctions.forEach(draw => {
